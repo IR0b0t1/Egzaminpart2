@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Waltuh</title>
+</head>
+
+<body>
+    <header>
+        <h1>Efekty na obrazkach</h1>
+    </header>
+    <main>
+        <div>
+            <article>
+                <img src="img/pszczola.jpg" alt="pomarancza">
+                <input type="radio" name="efects" value="blur">Blur</input>
+                <input type="radio" name="efects" value="sepia">Sepia</input>
+                <input type="radio" name="efects" value="negative">Negatyw</input>
+                <button>Zastosuj</button>
+            </article>
+            <article>
+                <img src="img/pomarancza.jpg" alt="pomarancza">
+                <button id="kolor">Kolorowy</button>
+                <button id="blackWhite">Czarno-biały</button>
+            </article>
+        </div>
+        <div>
+            <article>
+                <img src="img/owoce.jpg" alt="pomarancza">
+                <input type="range" id="opacity" max="100" min="1">
+                <button id="opcityButton">Zastosuj</button>
+            </article>
+            <article>
+                <img src="img/zolw.jpg" alt="pomarancza">
+                <input type="range" id="brightness" max="100" min="1">
+                <button id="brightnessButton">Zastosuj</button>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <a href="http://www.css.com">Zobacz inne efekty obrazu</a>
+        <p>Stronę wykonał: 4598777411966636, 06/2027, 433, 6801</p>
+    </footer>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const image1 = document.querySelectorAll("article img")[0];
+        const effectButtons = document.querySelectorAll("input[name='efects']");
+        const applyEffectButton = document.querySelectorAll("button")[0];
+
+        applyEffectButton.addEventListener("click", function () {
+            const selectedEffect = document.querySelector("input[name='efects']:checked");
+            if (selectedEffect) {
+                let filterValue = "";
+                switch (selectedEffect.value) {
+                    case "blur":
+                        const blurAmount = Math.floor(Math.random() * (8 - 4 + 1)) + 4;
+                        filterValue = `blur(${blurAmount}px)`;
+                        break;
+                    case "sepia":
+                        filterValue = "sepia(100%)";
+                        break;
+                    case "negative":
+                        filterValue = "invert(100%)";
+                        break;
+                }
+                image1.style.filter = filterValue;
+            }
+        });
+
+        const image2 = document.querySelectorAll("article img")[1];
+        const colorButton = document.getElementById("kolor");
+        const blackWhiteButton = document.getElementById("blackWhite");
+
+        colorButton.addEventListener("click", function () {
+            image2.style.filter = "none";
+        });
+
+        blackWhiteButton.addEventListener("click", function () {
+            image2.style.filter = "grayscale(100%)";
+        });
+
+        const image3 = document.querySelectorAll("article img")[2];
+        const opacitySlider = document.getElementById("opacity");
+        const opacityButton = document.getElementById("opcityButton");
+
+        opacityButton.addEventListener("click", function () {
+            const opacityValue = opacitySlider.value;
+            image3.style.opacity = opacityValue / 100;
+        });
+
+        const image4 = document.querySelectorAll("article img")[3];
+        const brightnessSlider = document.getElementById("brightness");
+        const brightnessButton = document.getElementById("brightnessButton");
+
+        brightnessButton.addEventListener("click", function () {
+            const brightnessValue = brightnessSlider.value;
+            image4.style.filter = `brightness(${brightnessValue}%)`;
+        });
+    });
+</script>
+
+
+</html>

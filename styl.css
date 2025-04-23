@@ -1,0 +1,43 @@
+* {
+    font-family: serif;
+    text-align: center;
+}
+
+header, footer {
+    background: indigo;
+    font-style: italic;
+    color: white;
+    padding: 2px;
+}
+
+article {
+    width: 50%;
+    height: 470px;
+}
+
+img {
+    padding: 3px;
+    margin: 10px;
+    border: 2px dashed slateblue;
+}
+
+a {
+    color: white;
+}
+
+button {
+    background: slateblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+input[type=range] {
+    width: 80%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
