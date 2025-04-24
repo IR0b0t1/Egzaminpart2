@@ -3,7 +3,8 @@
     text-align: center;
 }
 
-header, footer {
+header,
+footer {
     background: indigo;
     font-style: italic;
     color: white;
@@ -31,6 +32,7 @@ button {
     border: none;
     padding: 10px 20px;
     margin-top: 10px;
+    width: 120px;
 }
 
 input[type=range] {
