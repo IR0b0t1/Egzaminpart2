@@ -16,9 +16,20 @@
         <div>
             <article>
                 <img src="img/pszczola.jpg" alt="pomarancza">
-                <input type="radio" name="efects" value="blur">Blur</input>
-                <input type="radio" name="efects" value="sepia">Sepia</input>
-                <input type="radio" name="efects" value="negative">Negatyw</input>
+                <div style="display: flex; flex-direction: column;">
+                    <div>
+                        <input type="radio" name="efects" value="blur" id="blur">
+                        <label for="blur">Blur</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="efects" value="sepia" id="sepia">
+                        <label for="sepia">Sepia</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="efects" value="negative" id="negative">
+                        <label for="negative">Negatyw</label>
+                    </div>
+                </div>
                 <button>Zastosuj</button>
             </article>
             <article>
